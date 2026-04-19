@@ -21,7 +21,18 @@ Chaque sujet inclut une description detaillee, des references academiques et pra
 - **OR-Library** : instances pour problemes d'OR. [Beasley's OR-Library](http://people.brunel.ac.uk/~mastjjb/jeb/info.html)
 - **MiniZinc Challenge Benchmarks** : instances de competition. [GitHub](https://github.com/minizinc/minizinc-benchmarks)
 
-### Notebooks du cours
+### Notebooks du cours CoursIA
+Les notebooks suivants sont disponibles dans le depot CoursIA (jsboige/CoursIA) et constituent des prerequis ou des points de depart pour les projets :
+- **Search/Part1-Foundations/** : Search-1 (StateSpace), Search-3 (A*, heuristiques), Search-4 (Local Search), Search-9 (Programmation lineaire)
+- **Search/Part2-CSP/** : CSP-1 (Fondamentaux), CSP-4 (Scheduling, IntervalVar, NoOverlap, Cumulative), CSP-5 (Optimization, Bin Packing, Knapsack), CSP-6 (Hybridation CP+SAT, LLM+CSP), CSP-7 (Soft Constraints), CSP-9 (Distributed CSP)
+- **Search/Applications/CSP/** : App-4 (Job-Shop Scheduling), App-8 (MiniZinc), App-17 (VRP Logistics)
+- **Search/Applications/Hybrid/** : App-17 (VRP avec SA, GA, ACO, CP-SAT)
+- **SymbolicAI/SmartContracts/** : Serie de 27 notebooks (SC-0 a SC-15) couvrant blockchain, Solidity, verification formelle (SC-14), fuzz testing (SC-13), cryptographie (ZKP, HE)
+- **SymbolicAI/Planners/** : Planners-6 (Domains IPC dont Satellite), Planners-10 (LLM Planning), Planners-12 (Learning to Plan)
+- **SymbolicAI/Linq2Z3.ipynb** : Z3 SMT Solver en C#
+- **SymbolicAI/OR-tools-Stiegler.ipynb** : OR-Tools CP en C#
+- **Sudoku/** : 18 notebooks couvrant Sudoku avec multiples solveurs (Z3, CP-SAT, backtracking)
+- **GameTheory/** : 17 notebooks dont Gale-Shapley (Stable Marriage)
 - **Notebook Agentique** : pour la creation et finalisation automatisee de notebooks de projet
 - **Integration LLM** : function calling avec OpenAI/MCP pour assister la modelisation CP. Voir [Function Calling - OpenAI](https://platform.openai.com/docs/guides/function-calling) et [MCP Specification](https://modelcontextprotocol.io/)
 
@@ -58,6 +69,10 @@ from ortools.sat.python import cp_model
 - CP avec contraintes de circuit Hamiltonien limite
 - Programmation lineaire en nombres entiers
 - Algorithmes de clearing (approche iterative)
+
+### Contenu CoursIA connexe
+- **GameTheory/** : Gale-Shapley (Stable Marriage) — base algorithmique pour le matching
+- **CSP-1-Fundamentals** : cryptarithmetique mentionnee comme exemple CSP
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, NetworkX, PuLP
@@ -96,6 +111,10 @@ from ortools.sat.python import cp_model
 - Minimisation du temps de cycle (SALBP-2)
 - Variantes : U-lines, paralleles, mixed-model
 
+### Contenu CoursIA connexe
+- **CSP-4-Scheduling** : IntervalVar, NoOverlap, Cumulative — primitives CP-SAT directement applicables
+- **CSP-5-Optimization** : Bin Packing, Knapsack — problemes d'optimisation similaires
+
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, Hexaly
 
@@ -130,6 +149,12 @@ La conception de reseau logistique implique de localiser les installations (usin
 - Contraintes de capacite et de service
 - Multi-objectifs : cout vs robustesse vs emissions
 - Analyse de sensibilite et scenarios
+
+### Contenu CoursIA connexe
+- **Search-9-LinearProgramming** : references l'optimisation logistique et les supply chains
+- **CSP-5-Optimization** : Bin Packing, Knapsack — techniques d'allocation optimales
+- **CSP-9-Distributed** : mentionne les supply chains en contexte DisCSP
+- *Note* : un notebook `Search-App-8-SupplyChain.ipynb` est reference dans Search-9 mais n'existe pas encore — ce sujet serait un bon candidat pour le creer.
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, PuLP, GeoPandas
@@ -166,6 +191,9 @@ La composition musicale peut etre formulee comme un probleme de satisfaction de 
 - Generation melodique avec contour et intervalles
 - Integration avec MIDI et synthesis audio
 - Interactive constraint programming (generation en temps reel)
+
+### Contenu CoursIA connexe
+- *Aucun contenu CoursIA specifique a la musique* — ce sujet est une application entierement nouvelle des primitives CSP. La modelisation harmonique/rythmique est originale.
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, music21, MIDIUtil
@@ -206,6 +234,12 @@ Un assistant de planification conversationnel combine un LLM pour l'interaction 
 - Definition d'un schema de contraintes structure
 - Interface web (Streamlit ou Flask)
 
+### Contenu CoursIA connexe
+- **CSP-6-Hybridation** : couvre explicitement "LLM + CSP pour la modelisation" — fondation directe
+- **Planners-10-LLM-Planning** : LLMs pour la planification, prompting, plan repair
+- **Planners-12-LOOP** : Learning to Plan, modeles neuronaux pour les heuristiques
+- *Ce sujet combine naturellement deux axes deja enseignes separement dans CoursIA.*
+
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, OpenAI API/LM Studio, FastAPI, Streamlit
 
@@ -244,6 +278,9 @@ G = ox.graph_from_place("Paris, France", network_type="drive")
 - Contraintes de capacite et de couverture
 - Multi-objectifs : accessibilite vs cout vs equite
 - Integration avec donnees geospatiales (OpenStreetMap)
+
+### Contenu CoursIA connexe
+- *Aucun contenu CoursIA specifique a la planification urbaine* — le sujet s'appuie sur les primitives generales d'optimisation (CSP-4, CSP-5) appliquees a un domaine nouveau.
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, GeoPandas, OSMnx
@@ -284,6 +321,10 @@ from ortools.constraint_solver import routing_enums_pb2, pywrapcp
 - Optimisation multi-objectifs (distance + energie)
 - Scenario avec flotte mixte (electrique + thermique)
 
+### Contenu CoursIA connexe
+- **App-17-VRP-Logistics** : couvre le VRP classique avec SA, GA, ACO, CP-SAT — fondation directe. Le projet ajoute les contraintes electriques (batterie, stations de recharge).
+- **CSP-5-Optimization** : techniques d'optimisation pour les variantes VRP
+
 ### Technologies pertinentes
 Python, OR-Tools Routing, PyVRP, NetworkX
 
@@ -320,6 +361,10 @@ from ortools.sat.python import cp_model
 - Contraintes de capacite et d'affinite
 - Minimisation du nombre de serveurs actifs
 - Dynamic allocation et migration
+
+### Contenu CoursIA connexe
+- **CSP-4-Scheduling** : JSSP, RCPSP, IntervalVar, NoOverlap, Cumulative — primitives CP-SAT directement applicables au placement de VMs
+- **App-4-JobShopScheduling** : ordonnancement industriel avec intervalles, precedences, makespan
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, PuLP
@@ -358,6 +403,11 @@ import shapely.geometry as geom
 - Contraintes de collision et de cinematique
 - Integration avec A* et RRT
 - Application : robots mobiles, bras robotiques
+
+### Contenu CoursIA connexe
+- **Search-1-StateSpace** : problemes de robotique et pathfinding mentionnes
+- **Search-3-Informed** : A*, heuristiques — directement applicables
+- **Planners-6-Domains** : domaines IPC dont Gripper (robotique)
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, Shapely, ROS
@@ -404,6 +454,12 @@ solver.add(amount <= balance)  # precondition de transfert
 - Symbolic execution des smart contracts
 - Integration avec outils de dev (Hardhat, Foundry)
 
+### Contenu CoursIA connexe
+- **SmartContracts/SC-14-Formal-Verification** : verification formelle avec SMTChecker, Act — fondation directe
+- **SmartContracts/SC-13-Fuzz-Invariants** : fuzz testing, invariants
+- **SmartContracts/SC-0-Cypherpunk-Origins** : Hash, Merkle, PoW, signatures
+- *La serie SmartContracts (27 notebooks) couvre extensivement la verification de smart contracts. Le projet approfondit avec SMT/Z3.*
+
 ### Technologies pertinentes
 Python, Z3 SMT Solver, Solidity, Slither
 
@@ -438,6 +494,11 @@ La selection de transactions pour un bloc blockchain est un probleme de knapsack
 - Contraintes de taille et de gas
 - Extension : ordering des transactions (MEV)
 - Comparaison avec heuristiques gloutonnes
+
+### Contenu CoursIA connexe
+- **SmartContracts/** (serie complete) : blockchain, transactions, primitives DeFi — contexte blockchain
+- **CSP-5-Optimization** : Knapsack — la selection de transactions est essentiellement un probleme de knapsack
+- **CSP-7-Soft** : soft constraints, optimisation ponderee (maximisation des frais)
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, web3.py
@@ -475,6 +536,11 @@ L'optimisation energetique des data centers vise a reduire la consommation elect
 - Integration avec les prix de l'electricite
 - Dynamic workload management
 
+### Contenu CoursIA connexe
+- **CSP-4-Scheduling** : scheduling avec CP-SAT — primitives applicables
+- **CSP-5-Optimization** : techniques d'optimisation
+- **CSP-7-Soft** : soft constraints (energie comme objectif)
+
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, PuLP
 
@@ -504,6 +570,9 @@ Le placement de services en edge computing consiste a deployer des applications 
 - Optimisation multi-objectifs (latence + cout)
 - Dynamic placement et migration
 - Integration avec Kubernetes
+
+### Contenu CoursIA connexe
+- *Aucun contenu CoursIA specifique a l'edge computing* — s'appuie sur les primitives generales (CSP-4, CSP-5) dans un domaine nouveau.
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, Kubernetes API
@@ -539,6 +608,10 @@ Le satellite scheduling problem consiste a planifier les prises de vue et les co
 - Contraintes orbitales et energetiques
 - Multi-satellites et constellations
 - Optimisation de la valeur scientifique
+
+### Contenu CoursIA connexe
+- **Planners-6-Domains** : couvre le domaine Satellite des benchmarks IPC/PDDL — base pour la planification satellite
+- **CSP-4-Scheduling** : intervalles, fenetres de temps — primitives pour le scheduling orbital
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, Skyfield (astronomy)
@@ -578,6 +651,11 @@ from ortools.sat.python import cp_model
 - Dictionnaire et motifs de mots
 - Integration avec NLP (language models pour le scoring)
 
+### Contenu CoursIA connexe
+- **CSP-1-Fundamentals** : la cryptarithmetique est mentionnee comme exemple CSP (lettres -> chiffres)
+- **SmartContracts/** : couvre la cryptographie (ZKP, HE) mais pas le cassage de chiffres classiques
+- *Le sujet etend l'exemple du cours en un projet complet de cryptanalyse.*
+
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, NLTK, frequency analysis
 
@@ -614,6 +692,11 @@ from z3 import Real, Solver, And, Or, Implies
 - Detection de contradictions et identification de parametres critiques
 - Conception assistee de circuits genetiques
 - Comparaison avec la simulation numerique classique
+
+### Contenu CoursIA connexe
+- **Linq2Z3.ipynb** : Z3 SMT Solver — fondation directe pour la modelisation SMT
+- **Sudoku/Sudoku-12-Z3-*.ipynb** : resolution Sudoku avec Z3 — exemples de modelisation SMT
+- *Aucun contenu CoursIA specifique a la biologie* — le sujet applique les outils Z3 a un domaine entierement nouveau.
 
 ### Technologies pertinentes
 Python, Z3 SMT Solver, Tellurium, libSBML
@@ -655,6 +738,13 @@ Chaque annee, plusieurs competitions internationales evaluent les progres en res
 - Modelisation avec CP-SAT ou Z3
 - Optimisation des performances (search strategies, symmetry breaking)
 - Redaction d'un rapport comparatif avec l'etat de l'art
+
+### Contenu CoursIA connexe
+- **CSP-6-Hybridation** : CP+SAT architecture (LCG), CP-SAT internals — preparation directe
+- **App-8-MiniZinc** : syntaxe MiniZinc, contraintes globales — preparation pour la MiniZinc Challenge
+- **Linq2Z3.ipynb** : Z3 SMT Solver — preparation pour SMT-COMP
+- **OR-tools-Stiegler.ipynb** : OR-Tools CP — preparation pour les benchmarks CP
+- *CoursIA couvre tous les solveurs necessaires. Le projet consiste a les appliquer sur des benchmarks de competition.*
 
 ### Technologies pertinentes
 Python, OR-Tools CP-SAT, MiniZinc, Z3
