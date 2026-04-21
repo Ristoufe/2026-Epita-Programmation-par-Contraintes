@@ -4,7 +4,7 @@
 
 Ce document presente les sujets de projet pour le cours de Programmation par Contraintes (SCIA). Chaque sujet inclut une description detaillee, des references academiques et pratiques, des liens vers des ressources de bootstrapping (tutoriels, notebooks, benchmarks), et les technologies pertinentes.
 
-> **Consignes de choix** : Chaque groupe doit forker ce depot et creer un dossier pour son projet contenant le code source, un notebook explicatif, et les slides de soutenance. Les livraisons se font via des pull requests regulieres.
+> **Consignes de choix** : Chaque groupe doit forker ce depot et creer un dossier pour son projet contenant le code source, un notebook explicatif une UI ou une démo, et les slides de soutenance. Les livraisons se font via des pull requests regulieres idéalement.
 
 ---
 
